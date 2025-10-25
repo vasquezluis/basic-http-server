@@ -12,7 +12,7 @@ namespace HttpServer
     // ? store of port
     private readonly int _port;
     // ? waits for incomming connections
-    private TcpListener _listener;
+    private TcpListener? _listener;
     private bool _isRunning;
 
     public SimpleHttpServer(int port = 8080)
@@ -95,7 +95,7 @@ namespace HttpServer
       string line;
 
       // read the request line and headers
-      while ((line = await reader.ReadLineAsync()) != null)
+      while ((line = await reader.ReadLineAsync() ?? string.Empty) != string.Empty)
       {
         requestBuilder.AppendLine(line);
 
