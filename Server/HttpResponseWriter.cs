@@ -4,35 +4,23 @@ namespace SimpleHttpServer.Server
 {
     public static class HttpResponseWriter
     {
+
         public static StreamWriter Create(Stream stream)
         {
             return new StreamWriter(stream, Encoding.UTF8, leaveOpen: true);
         }
 
-        public static async Task WriteAsync(StreamWriter writer, string requestLine)
+        public static async Task WriteAsync(StreamWriter writer, string requestLine, Router router)
         {
             // ? parse the requext method and path
             string[] parts = requestLine.Split(' ');
             string method = parts.Length > 0 ? parts[0] : "UNKNOWN";
             string path = parts.Length > 1 ? parts[1] : "/";
 
-            // ? create simple HTML response
-            string htmlContent = $@"
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple HTTP Server</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-    <p><strong>Method:</strong> {method}</p>
-    <p><strong>Path:</strong> {path}</p>
-    <p><strong>Time:</strong> {DateTime.Now}</p>
-</body>
-</html>";
+            string body = router.Handle(path);
 
             // ? get the content in bytes from the html content (the client reads by the content length in bytes)
-            byte[] contentBytes = Encoding.UTF8.GetBytes(htmlContent);
+            byte[] contentBytes = Encoding.UTF8.GetBytes(body);
 
             // ? use \r\n explicitly for HTTP header lines (EOL -> RFCL)
             string header =

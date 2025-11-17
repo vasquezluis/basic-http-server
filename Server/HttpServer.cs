@@ -8,10 +8,15 @@ namespace SimpleHttpServer.Server
         private readonly int _port;
         private TcpListener? _listener; // ? waits for incomming connections
         private bool _isRunning;
+        private readonly Router _router = new();
 
         public HttpServer(int port = 8080)
         {
             _port = port;
+
+            _router.AddRoute("/", () => "<h1>Welcome!</h1>");
+            _router.AddRoute("/hello", () => "<h1>Hello from the router!</h1>");
+            _router.AddRoute("/time", () => $"<p>The time is: {DateTime.Now}</p>");
         }
 
         public async Task StartAsync()
@@ -70,7 +75,7 @@ namespace SimpleHttpServer.Server
                         */
 
                         // ? create a response
-                        await HttpResponseWriter.WriteAsync(writer, requestLine);
+                        await HttpResponseWriter.WriteAsync(writer, requestLine, _router);
                     }
                 }
             }
