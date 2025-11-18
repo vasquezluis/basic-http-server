@@ -1,3 +1,5 @@
+using SimpleHttpServer.Controllers;
+
 namespace SimpleHttpServer.Server
 {
     public class Router
@@ -14,7 +16,8 @@ namespace SimpleHttpServer.Server
             if (_routes.TryGetValue(path, out var handler))
                 return handler();
 
-            return new HttpResponse("<h1>404 - Not Found</h1>", "text/html");
+            var notFound = new NotFoundController();
+            return notFound.NotFound();
         }
     }
 }

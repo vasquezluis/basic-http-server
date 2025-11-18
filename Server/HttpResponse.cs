@@ -1,5 +1,6 @@
 namespace SimpleHttpServer.Server
 {
+    // response structure
     public class HttpResponse
     {
         public string Body { get; set; }

@@ -22,6 +22,7 @@ namespace SimpleHttpServer.Server
             // ? get the content in bytes from the html content (the client reads by the content length in bytes)
             byte[] contentBytes = Encoding.UTF8.GetBytes(response.Body);
 
+            // ? build headers with proper response type
             string header =
                 "HTTP/1.1 200 OK\r\n" +
                 $"Content-Type: {response.ContentType}; charset=utf-8\r\n" +
