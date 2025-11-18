@@ -1,6 +1,6 @@
 using System.Net; // >> Contains IPAddress for network addressing
 using System.Net.Sockets;
-using http_server.Controllers; // >> Provides TcpListener and TcpClient for low-level TCP networking
+using SimpleHttpServer.Controllers; // >> Provides TcpListener and TcpClient for low-level TCP networking
 
 namespace SimpleHttpServer.Server
 {
@@ -17,10 +17,13 @@ namespace SimpleHttpServer.Server
 
             var home = new HomeController();
             var time = new TimeController();
+            var api = new ApiController();
 
+            // register routes
             _router.AddRoute("/", home.Index);
             _router.AddRoute("/hello", home.Hello);
             _router.AddRoute("/time", time.Time);
+            _router.AddRoute("/api/time", api.GetTime);
         }
 
         public async Task StartAsync()

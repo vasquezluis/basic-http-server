@@ -1,7 +1,12 @@
-namespace http_server.Controllers
+using SimpleHttpServer.Server;
+
+namespace SimpleHttpServer.Controllers
 {
     public class TimeController
     {
-        public string Time() => $"<p>The time is: {DateTime.Now}</p>";
+        public HttpResponse Time()
+        {
+            return new HttpResponse($"<p>The time is: {DateTime.Now}</p>", "text/html");
+        }
     }
 }

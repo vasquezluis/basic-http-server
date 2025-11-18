@@ -1,8 +1,17 @@
-namespace http_server.Controllers
+using SimpleHttpServer.Server;
+
+namespace SimpleHttpServer.Controllers
 {
     public class HomeController
     {
-        public string Index() => "<h1>Welcome!</h1>";
-        public string Hello() => "<h1>Hello from the router!</h1>";
+        public HttpResponse Index()
+        {
+            return new HttpResponse("<h1>Welcome!</h1>", "text/html");
+        }
+
+        public HttpResponse Hello()
+        {
+            return new HttpResponse("<h1>Hello from the router!</h1>", "text/html");
+        }
     }
 }

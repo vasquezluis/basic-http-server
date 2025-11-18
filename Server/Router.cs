@@ -2,19 +2,19 @@ namespace SimpleHttpServer.Server
 {
     public class Router
     {
-        private readonly Dictionary<string, Func<string>> _routes = new();
+        private readonly Dictionary<string, Func<HttpResponse>> _routes = new();
 
-        public void AddRoute(string path, Func<string> handler)
+        public void AddRoute(string path, Func<HttpResponse> handler)
         {
             _routes[path] = handler;
         }
 
-        public string Handle(string path)
+        public HttpResponse Handle(string path)
         {
             if (_routes.TryGetValue(path, out var handler))
                 return handler();
 
-            return "<h1>404 - Not Found</h1>";
+            return new HttpResponse("<h1>404 - Not Found</h1>", "text/html");
         }
     }
 }
