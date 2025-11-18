@@ -1,5 +1,6 @@
 using System.Net; // >> Contains IPAddress for network addressing
-using System.Net.Sockets; // >> Provides TcpListener and TcpClient for low-level TCP networking
+using System.Net.Sockets;
+using http_server.Controllers; // >> Provides TcpListener and TcpClient for low-level TCP networking
 
 namespace SimpleHttpServer.Server
 {
@@ -14,9 +15,12 @@ namespace SimpleHttpServer.Server
         {
             _port = port;
 
-            _router.AddRoute("/", () => "<h1>Welcome!</h1>");
-            _router.AddRoute("/hello", () => "<h1>Hello from the router!</h1>");
-            _router.AddRoute("/time", () => $"<p>The time is: {DateTime.Now}</p>");
+            var home = new HomeController();
+            var time = new TimeController();
+
+            _router.AddRoute("/", home.Index);
+            _router.AddRoute("/hello", home.Hello);
+            _router.AddRoute("/time", time.Time);
         }
 
         public async Task StartAsync()
