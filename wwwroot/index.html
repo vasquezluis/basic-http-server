@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux - Freedom to Innovate</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg"
+            alt="Linux Tux"
+            class="logo-icon"
+          />
+          <span class="logo-text">Linux</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#distributions">Distributions</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#download" class="cta-button">Get Started</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            The Power of <span class="highlight">Open Source</span>
+          </h1>
+          <p class="hero-subtitle">
+            Experience the freedom, security, and flexibility of Linux. Join
+            millions of users worldwide who choose open source innovation.
+          </p>
+          <div class="hero-buttons">
+            <a href="#download" class="btn btn-primary">Download Now</a>
+            <a href="#features" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+              </div>
+              <span class="terminal-title">user@linux:~</span>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">sudo apt update && apt upgrade</span>
+              </div>
+              <div class="terminal-line">
+                <span class="output">Reading package lists... Done</span>
+              </div>
+              <div class="terminal-line">
+                <span class="output">Building dependency tree</span>
+              </div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">echo "Welcome to Linux!"</span>
+              </div>
+              <div class="terminal-line">
+                <span class="output">Welcome to Linux!</span>
+              </div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title">Why Choose Linux?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure by Design</h3>
+            <p>
+              Built-in security features and regular updates keep your system
+              protected from threats.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🆓</div>
+            <h3>Completely Free</h3>
+            <p>
+              No licensing fees, no subscriptions. Download, use, and modify
+              Linux without restrictions.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>
+              Optimized performance that breathes new life into older hardware
+              and maximizes modern systems.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔧</div>
+            <h3>Fully Customizable</h3>
+            <p>
+              Tailor every aspect of your system to match your workflow and
+              preferences.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3>Open Source</h3>
+            <p>
+              Transparent code that you can inspect, modify, and contribute to
+              the global community.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💪</div>
+            <h3>Rock Solid Stability</h3>
+            <p>
+              Enterprise-grade reliability with uptimes measured in years, not
+              days.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Distributions -->
+    <section id="distributions" class="distributions">
+      <div class="container">
+        <h2 class="section-title">Popular Distributions</h2>
+        <p class="section-subtitle">
+          Choose the Linux distribution that best fits your needs
+        </p>
+        <div class="distros-grid">
+          <div class="distro-card">
+            <div class="distro-logo">🐧</div>
+            <h3>Ubuntu</h3>
+            <p>
+              User-friendly and perfect for beginners transitioning from other
+              operating systems.
+            </p>
+            <a href="#" class="distro-link">Learn More →</a>
+          </div>
+          <div class="distro-card">
+            <div class="distro-logo">🎩</div>
+            <h3>Fedora</h3>
+            <p>
+              Cutting-edge features with the latest technologies for developers
+              and enthusiasts.
+            </p>
+            <a href="#" class="distro-link">Learn More →</a>
+          </div>
+          <div class="distro-card">
+            <div class="distro-logo">🦎</div>
+            <h3>openSUSE</h3>
+            <p>
+              Professional-grade distribution with excellent tools for system
+              administration.
+            </p>
+            <a href="#" class="distro-link">Learn More →</a>
+          </div>
+          <div class="distro-card">
+            <div class="distro-logo">⚡</div>
+            <h3>Arch Linux</h3>
+            <p>
+              Minimalist and highly customizable for users who want complete
+              control.
+            </p>
+            <a href="#" class="distro-link">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+      <div class="container">
+        <div class="community-content">
+          <h2 class="section-title">Join the Community</h2>
+          <p>
+            Linux is powered by one of the largest and most passionate
+            communities in technology. Get help, contribute, and connect with
+            fellow Linux enthusiasts worldwide.
+          </p>
+          <div class="community-stats">
+            <div class="stat">
+              <div class="stat-number">3.2B+</div>
+              <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">600+</div>
+              <div class="stat-label">Distributions</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">30+</div>
+              <div class="stat-label">Years of Innovation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="download" class="cta">
+      <div class="container">
+        <h2>Ready to Experience Linux?</h2>
+        <p>Start your journey with open source freedom today</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary btn-large">Download Ubuntu</a>
+          <a href="#" class="btn btn-outline btn-large"
+            >Browse All Distributions</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Tutorials</a></li>
+              <li><a href="#">Forums</a></li>
+              <li><a href="#">IRC Channels</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Distributions</h4>
+            <ul>
+              <li><a href="#">Ubuntu</a></li>
+              <li><a href="#">Fedora</a></li>
+              <li><a href="#">Debian</a></li>
+              <li><a href="#">CentOS</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="#">Mailing Lists</a></li>
+              <li><a href="#">Reddit</a></li>
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">Stack Overflow</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">Linux Foundation</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">License</a></li>
+              <li><a href="#">Contributing</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Linux Community. Licensed under GPL. Tux mascot by Larry
+            Ewing.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Terminal cursor animation
+      const cursor = document.querySelector(".cursor");
+      if (cursor) {
+        setInterval(() => {
+          cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
+        }, 500);
+      }
+    </script>
+  </body>
+</html>

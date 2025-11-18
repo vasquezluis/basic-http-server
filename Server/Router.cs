@@ -1,4 +1,5 @@
 using SimpleHttpServer.Controllers;
+using SimpleHttpServer.Services;
 
 namespace SimpleHttpServer.Server
 {
@@ -13,9 +14,15 @@ namespace SimpleHttpServer.Server
 
         public HttpResponse Handle(string path)
         {
+            // 1. Check static files
+            if (StaticFileService.TryGetFile(path, out var fileResponse))
+                return fileResponse;
+
+            // 2. Check registered routes
             if (_routes.TryGetValue(path, out var handler))
                 return handler();
 
+            // 3. 
             var notFound = new NotFoundController();
             return notFound.NotFound();
         }

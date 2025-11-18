@@ -20,7 +20,7 @@ namespace SimpleHttpServer.Server
             HttpResponse response = router.Handle(path);
 
             // ? get the content in bytes from the html content (the client reads by the content length in bytes)
-            byte[] contentBytes = Encoding.UTF8.GetBytes(response.Body);
+            byte[] contentBytes = response.BodyBytes;
 
             // ? build headers with proper response type
             string header =
