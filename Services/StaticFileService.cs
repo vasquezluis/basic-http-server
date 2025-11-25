@@ -24,7 +24,7 @@ namespace SimpleHttpServer.Services
             response = null!;
 
             if (path == "/")
-                path = "/index/html"; // default file
+                path = "/index.html"; // default file
 
             string filePath = "wwwroot" + path.Replace("/", Path.DirectorySeparatorChar.ToString());
 

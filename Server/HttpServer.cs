@@ -20,7 +20,6 @@ namespace SimpleHttpServer.Server
             var api = new ApiController();
 
             // register routes
-            _router.AddRoute("/", home.Index);
             _router.AddRoute("/hello", home.Hello);
             _router.AddRoute("/time", time.Time);
             _router.AddRoute("/api/time", api.GetTime);
